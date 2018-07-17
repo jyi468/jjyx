@@ -1,0 +1,10 @@
+# logging
+logs
+*.Logs
+
+# build and bundle
+build/
+bundle.js
+
+# dependency
+node_modules/
