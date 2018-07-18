@@ -1,3 +1,5 @@
+// Webpack is used to bundle modules together. Using the configuration, we can create different bundles for different uses
+// If you wanted to only bundle part of the app, you can specify that in the webpack configuration
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
