@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+// Have to use process.env.PORT so that Heroku can set it here
 const PORT = process.env.PORT || 8080;
 const path = require('path');
 const app = express();
