@@ -33,16 +33,16 @@ class Grid extends Component {
 
     render() {
         return (
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Market Cap</th>
-                        <th>Price</th>
-                        <th>Volume (24h)</th>
-                        <th>Circulating Supply</th>
-                        <th>Change (24h)</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Market Cap</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Volume (24h)</th>
+                        <th scope="col">Circulating Supply</th>
+                        <th scope="col">Change (24h)</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import App from './Components/App';
+
+import "bootstrap";
 import {$, jQuery} from 'jquery';
 import { _ } from 'lodash'
 

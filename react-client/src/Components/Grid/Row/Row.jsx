@@ -4,7 +4,7 @@ function Row(props) {
     let data = props.data;
     return (
         <tr key={data.rank}>
-            <td>{data.rank}</td>
+            <th scope="row">{data.rank}</th>
             <td>{data.name}</td>
             <td>{data.quotes.USD.market_cap}</td>
             <td>{data.quotes.USD.price}</td>
