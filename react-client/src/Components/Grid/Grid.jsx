@@ -67,6 +67,13 @@ function compareCoins(coin1, coin2) {
     return 0;
 }
 
+/**
+ * We create Row objects from the object that is returned by the
+ * CoinMarketCap API
+ *
+ * @param response
+ * @returns {any[]}
+ */
 function createRows(response) {
     // Change to array first
     let coins = Object.keys(response.data).map(function (key) {
