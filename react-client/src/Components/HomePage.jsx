@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Grid from "./Grid/Grid";
+import NavBar from "./HeaderComponent/NavBar"
 
 class HomePage extends Component {
     render() {
         return (
-            <div>
-                Home page
-
-                <Grid />
+            <div className="container main-section">
+                <NavBar />
+                <Grid/>
             </div>
         )
     }

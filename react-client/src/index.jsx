@@ -2,11 +2,13 @@
 // jsx files are syntactic sugar for React.createElement(component, props, ...children). You can return
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/App';
+import Button from '@material-ui/core/Button';
 
 import "bootstrap";
 import {$, jQuery} from 'jquery';
 import { _ } from 'lodash'
+
+import App from './Components/App';
 
 // Global
 window.$ = $;

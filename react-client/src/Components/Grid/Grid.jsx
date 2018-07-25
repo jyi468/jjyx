@@ -22,7 +22,7 @@ class Grid extends Component {
                     let rows = createRows(response);
 
                     this.setState({rows: rows});
-                    console.log("state", this.state.rows)
+                    //console.log("state", this.state.rows)
                 },
                 // Failure
                 (reason) => { console.log(reason) });
@@ -30,22 +30,26 @@ class Grid extends Component {
 
     render() {
         return (
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Market Cap</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Volume (24h)</th>
-                        <th scope="col">Circulating Supply</th>
-                        <th scope="col">Change (24h)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.rows}
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-xs-12">
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Market Cap</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Volume (24h)</th>
+                            <th scope="col">Circulating Supply</th>
+                            <th scope="col">Change (24h)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.rows}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         )
     }
 
