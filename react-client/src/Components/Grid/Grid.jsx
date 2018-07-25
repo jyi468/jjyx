@@ -12,11 +12,8 @@ class Grid extends Component {
     componentDidMount() {
 
         // Get main grid data
-        fetch('./react-client/resources/all-currencies.json', {
-            headers : {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
+        fetch("https://api.coinmarketcap.com/v2/ticker/", {
+            method: "GET"
         })
             .then((response) => response.json())
             .then(
@@ -55,6 +52,12 @@ class Grid extends Component {
 
 }
 
+/**
+ * Compare coin ranks. The lowest rank is shown first in the list
+ * @param coin1
+ * @param coin2
+ * @returns {number}
+ */
 function compareCoins(coin1, coin2) {
     if (coin1.rank < coin2.rank) {
         return -1;
