@@ -22,26 +22,7 @@ class Grid extends Component {
             .then(
                 // Success
                 (response) => {
-                    // Change to array first
-                    let coins = Object.keys(response.data).map(function (key) {
-                        return response.data[key];
-                    });
-
-                    // Sort array by rank of Coin
-                    coins.sort((coin1, coin2) => {
-                        if (coin1.rank < coin2.rank) {
-                            return -1;
-                        }
-
-                        if (coin1.rank > coin2.rank) {
-                            return 1;
-                        }
-
-                        return 0;
-                    });
-
-                    // Create grid rows for body
-                    let rows = coins.map((coin) => (<Row data={coin} />));
+                    let rows = createRows(response);
 
                     this.setState({rows: rows});
                     console.log("state", this.state.rows)
@@ -72,6 +53,31 @@ class Grid extends Component {
     }
 
 
+}
+
+function compareCoins(coin1, coin2) {
+    if (coin1.rank < coin2.rank) {
+        return -1;
+    }
+
+    if (coin1.rank > coin2.rank) {
+        return 1;
+    }
+
+    return 0;
+}
+
+function createRows(response) {
+    // Change to array first
+    let coins = Object.keys(response.data).map(function (key) {
+        return response.data[key];
+    });
+
+    // Sort array by rank of Coin
+    coins.sort(compareCoins);
+
+    // Create grid rows for body
+    return coins.map((coin) => (<Row data={coin} />));
 }
 
 export default Grid;
