@@ -16,7 +16,7 @@ class Grid extends Component {
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
-                        <div class="col-xs-3 offset-md-9">
+                        <div class="col-xs-4 offset-md-8">
                             <Pagination pageNumber={this.props.pageNumber} maxPage={this.props.maxPage} />
                         </div>
                     </div>
@@ -43,7 +43,7 @@ class Grid extends Component {
                         </tbody>
                     </table>
                     <div class="row">
-                        <div class="col-xs-3 offset-md-9">
+                        <div class="col-xs-4 offset-md-8">
                             <Pagination pageNumber={this.props.pageNumber} maxPage={this.props.maxPage} />
                         </div>
                     </div>

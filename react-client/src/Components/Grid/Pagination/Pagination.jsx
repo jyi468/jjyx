@@ -8,17 +8,17 @@ class Pagination extends Component {
     //handleButtonClick()
 
     render() {
-        const pageNumber = this.props.pageNumber;
+        const pageNumber = parseInt(this.props.pageNumber);
 
         let next100 = (
             <li class="page-item">
-                <a class="page-link" href={this.props.maxPage - 1}>Next 100 →</a>
+                <a class="page-link" href={pageNumber + 1}>Next 100 →</a>
             </li>
         );
 
         let prev100 = (
             <li class="page-item">
-                <a class="page-link" href={this.props.maxPage - 1}>← Previous 100</a>
+                <a class="page-link" href={pageNumber - 1}>← Previous 100</a>
             </li>
         );
 
@@ -50,8 +50,8 @@ class Pagination extends Component {
         // Else show all buttons
         return (
             <ul class="pagination">
-                {next100}
                 {prev100}
+                {next100}
                 {viewAll}
             </ul>
         );
