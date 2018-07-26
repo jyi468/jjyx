@@ -1,8 +1,4 @@
 class GridUtils {
-
-    constructor() {
-        this.compareCoins = this.compareCoins.bind(this);
-    }
     /**
      * We create Row objects from the object that is returned by the
      * CoinMarketCap API
