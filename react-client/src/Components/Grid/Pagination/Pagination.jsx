@@ -8,7 +8,7 @@ class Pagination extends Component {
     //handleButtonClick()
 
     render() {
-        const pageNumber = parseInt(this.props.pageNumber);
+        const pageNumber = this.props.pageNumber;
 
         let next100 = (
             <li class="page-item">
