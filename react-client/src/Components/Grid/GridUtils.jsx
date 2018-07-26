@@ -1,20 +1,26 @@
-/**
- * We create Row objects from the object that is returned by the
- * CoinMarketCap API
- *
- * @param response
- * @returns {any[]}
- */
-function createCoins(response) {
-    // Change to array first
-    let coins = Object.keys(response.data).map(function (key) {
-        return response.data[key];
-    });
+class GridUtils {
 
-    // Sort array by rank of Coin
-    coins.sort(compareCoins);
+    constructor() {
+        this.compareCoins = this.compareCoins.bind(this);
+    }
+    /**
+     * We create Row objects from the object that is returned by the
+     * CoinMarketCap API
+     *
+     * @param response
+     * @returns {any[]}
+     */
+    static createCoins(response) {
+        // Change to array first
+        let coins = Object.keys(response.data).map(function (key) {
+            return response.data[key];
+        });
 
-    return coins;
+        // Sort array by rank of Coin
+        coins.sort(compareCoins);
+
+        return coins;
+    }
 }
 
 /**
@@ -35,4 +41,4 @@ function compareCoins(coin1, coin2) {
     return 0;
 }
 
-export { createCoins };
+export default GridUtils;

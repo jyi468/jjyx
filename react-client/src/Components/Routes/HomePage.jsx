@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Grid from "../Grid/Grid";
 import NavBar from "../Header/NavBar"
-import { createCoins } from "../Grid/GridUtils";
+import GridUtils from "../Grid/GridUtils";
 
 // Order: constructor(), static getDerivedStateFromProps(), render(), componentDidMount()
 class HomePage extends Component {
@@ -49,7 +49,7 @@ class HomePage extends Component {
                 // Success
                 (response) => {
                     let maxPage = Math.ceil(response.metadata.num_cryptocurrencies / 100);
-                    let coins = createCoins(response);
+                    let coins = GridUtils.createCoins(response);
 
                     this.setState({
                         maxPage: maxPage,
