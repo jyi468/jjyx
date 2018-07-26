@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Row from './Row/Row';
+import Pagination from './Pagination/Pagination';
 
 class Grid extends Component {
 
@@ -14,6 +15,11 @@ class Grid extends Component {
         return (
             <div class="row">
                 <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-3 offset-md-9">
+                            <Pagination pageNumber={this.props.pageNumber} maxPage={this.props.maxPage} />
+                        </div>
+                    </div>
                     <table className="table">
                         <thead>
                         <tr>
@@ -36,6 +42,11 @@ class Grid extends Component {
 
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-xs-3 offset-md-9">
+                            <Pagination pageNumber={this.props.pageNumber} maxPage={this.props.maxPage} />
+                        </div>
+                    </div>
                 </div>
             </div>
         )
