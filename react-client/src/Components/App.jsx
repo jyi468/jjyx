@@ -11,7 +11,7 @@ class App extends Component {
             <Router>
                 <div>
                     <Route name="home" exact path="/:pageNumber(\d+)?" component={HomePage} />
-                    <Route name="currency" exact path="/currencies/:id" component={CurrencyPage} />
+                    <Route name="currency" exact path="/currencies/:name" component={CurrencyPage} />
                 </div>
             </Router>
         )
