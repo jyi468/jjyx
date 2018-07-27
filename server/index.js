@@ -19,6 +19,11 @@ app.get('/react-client/resources/all-currencies.json', (req, res) => {
     res.sendFile(path.resolve('${__dirname}/../react-client/resources/all-currencies.json'));
 });
 
+// Get bitcoin json
+app.get('/react-client/resources/all-currencies.json', (req, res) => {
+    res.sendFile(path.resolve('${__dirname}/../react-client/resources/bitcoin.json'));
+});
+
 // Start application on port
 app.listen(PORT, () => {
     console.log('listening on port ${PORT}!');
