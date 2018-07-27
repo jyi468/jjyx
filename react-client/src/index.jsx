@@ -5,15 +5,15 @@ import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 
 import "bootstrap";
-import {$, jQuery} from 'jquery';
+import $ from 'jquery';
+
 import { _ } from 'lodash'
 
 import App from './Components/App';
 
-// Global
+// export for others scripts to use
 window.$ = $;
-window.jQuery = jQuery;
-window._ = _;
+window.jQuery = $;
 
 // Render first component to virtual DOM
 ReactDOM.render(<App />, document.getElementById('root'));

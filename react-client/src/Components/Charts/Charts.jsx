@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Highcharts from 'highcharts/highstock';
 import Exporting from 'highcharts/modules/exporting';
-//import { stockChart } from 'highcharts/highstock';
 
 Exporting(Highcharts);
 
@@ -16,7 +15,7 @@ class Charts extends Component {
     componentDidMount() {
         // Can't do below fetch due to CORS not being allowed from coinmarketcap
         /*const stateName = this.props.name.toLowerCase();
-        fetch('https://graphs2.coinmarketcap.com/currencies/' + stateName, {
+        fetch('http://anyorigin.com/go?url=https://graphs2.coinmarketcap.com/currencies/' + stateName, {
             method: 'GET'
         })*/
         fetch('/bitcoin.json', {
@@ -81,7 +80,15 @@ function createChart(chartData, currencyName) {
     Highcharts.stockChart('container', {
 
         rangeSelector: {
-            selected: 4
+            selected: 4,
+            buttons: [{
+                type: 'changeScale',
+                events: {
+                    click: function () {
+                        $('#container').highcharts().yAxis[0].update({ type: 'logarithmic'})
+                    }
+                }
+            }]
         },
 
         yAxis: [{
