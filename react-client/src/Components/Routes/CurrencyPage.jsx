@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Charts from '../Charts/Charts';
+import NavBar from '../Header/NavBar';
 
 class CurrencyPage extends Component {
     constructor(props) {
@@ -11,7 +12,10 @@ class CurrencyPage extends Component {
 
     render() {
         return (
-            <Charts name={this.state.name}/>
+            <div class="container main-section">
+                <NavBar />
+                <Charts name={this.state.name}/>
+            </div>
         );
     }
 }

@@ -8,6 +8,7 @@ module.exports = {
     entry: `${SRC_DIR}/index.jsx`,
     output: {
         path: DIST_DIR,
+        publicPath: "/dist/",
         filename: 'bundle.js',
     },
     resolve: {
