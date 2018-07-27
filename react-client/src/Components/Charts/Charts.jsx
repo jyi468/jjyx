@@ -34,30 +34,63 @@ class Charts extends Component {
     render() {
         const currentData = this.state.data;
         if (Object.keys(currentData).length) {
-            createChart(this.state.data);
+            createChart(this.state.data, this.props.name);
         }
         return (<div id="container">{this.props.name}</div>)
     };
 
 }
 
-function createChart(chartData) {
-    let seriesOptions = Object.keys(chartData).map((key) => {
-        return {
-            name: key,
-            data: chartData[key]
+function createChart(chartData, currencyName) {
+    let seriesOptions = Object.keys(chartData).reduce(function(accumulator, key) {
+        if (currencyName !== 'bitcoin' || (currencyName === 'bitcoin' && name !== 'Price (BTC)')) {
+            let yData = {
+                data: chartData[key]
+            };
+
+            let name;
+
+            switch(key) {
+                case "market_cap_by_available_supply":
+                    name = "Market Cap";
+                    break;
+                case "price_btc":
+                    name = "Price (BTC)";
+                    break;
+                case "price_usd":
+                    name = "Price (USD)";
+                    //yData.yAxis = 1;
+                    break;
+                case "volume_usd":
+                    name = "24h Vol";
+                    break;
+                default:
+                    name = key;
+                    break;
+            }
+
+            yData.name = name;
+
+            accumulator.push(yData);
         }
-    });
+
+        return accumulator;
+
+    }, []);
+
     Highcharts.stockChart('container', {
 
         rangeSelector: {
             selected: 4
         },
 
-        yAxis: {
+        yAxis: [{
+            title: {
+                text: "Price (USD)"
+            },
             labels: {
                 formatter: function () {
-                    return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                    return (this.value > 0 ? ' + ' : '') + this.value;
                 }
             },
             plotLines: [{
@@ -65,7 +98,7 @@ function createChart(chartData) {
                 width: 2,
                 color: 'silver'
             }]
-        },
+        }],
 
         plotOptions: {
             series: {
