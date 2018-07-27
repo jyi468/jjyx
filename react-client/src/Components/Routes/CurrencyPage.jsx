@@ -5,7 +5,7 @@ class CurrencyPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: this.props.match.params.name
+            name: props.match.params.name
         };
     }
 

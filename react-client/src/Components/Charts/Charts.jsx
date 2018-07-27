@@ -14,7 +14,12 @@ class Charts extends Component {
         fetch('https://graphs2.coinmarketcap.com/currencies/' + stateName, {
             method: 'GET'
         })*/
-        fetch('/react-client/resources/bitcoin.json')
+        fetch('/bitcoin.json', {
+            header: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
             .then((response) => response.json())
             .then((currencyJson) => this.setState({chartData: currencyJson}));
     }

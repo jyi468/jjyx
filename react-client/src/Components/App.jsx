@@ -4,13 +4,14 @@ import { browserHistory } from 'react-router';
 import HomePage from './Routes/HomePage';
 import CurrencyPage from './Routes/CurrencyPage';
 
+// https://www.npmjs.com/package/path-to-regexp
 class App extends Component {
     render() {
         return (
             <Router>
                 <div>
-                    <Route name="home" exact path="/:pageNumber?" component={HomePage} />
-                    <Route name="currency" exact path="/currencies/:name" component={CurrencyPage} />
+                    <Route name="home" exact path="/:pageNumber(\d+)?" component={HomePage} />
+                    <Route name="currency" exact path="/currencies/:id" component={CurrencyPage} />
                 </div>
             </Router>
         )
