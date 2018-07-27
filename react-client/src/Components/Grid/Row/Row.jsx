@@ -3,7 +3,7 @@ import { Route, Redirect, Link } from 'react-router-dom';
 
 function Row(props) {
     let data = props.data;
-    let linkUrl = '/currencies/' + data.name;
+    let linkUrl = '/currencies/' + data.name.toLowerCase();
     return (
         <tr key={data.rank}>
             <th scope="row">{data.rank}</th>

@@ -8,10 +8,7 @@ class Grid extends Component {
         super(props);
     }
 
-
     render() {
-        //let rows = this.props.data.map((coin) => (<Row data={coin} />));
-
         return (
             <div class="row">
                 <div class="col-xs-12">
@@ -34,7 +31,6 @@ class Grid extends Component {
                         </thead>
                         <tbody>
                             {
-                                /*{rows}*/
                                 this.props.data.map((coin) => (
                                     <Row data={coin} />
                                 ))
@@ -52,8 +48,6 @@ class Grid extends Component {
         )
     }
 
-
 }
 
 export default Grid;
-
