@@ -14,11 +14,11 @@ class Charts extends Component {
 
     componentDidMount() {
         // Can't do below fetch due to CORS not being allowed from coinmarketcap
-        /*const stateName = this.props.name.toLowerCase();
-        fetch('http://anyorigin.com/go?url=https://graphs2.coinmarketcap.com/currencies/' + stateName, {
+        /*fetch('http://anyorigin.com/go?url=https://graphs2.coinmarketcap.com/currencies/' + stateName, {
             method: 'GET'
         })*/
-        fetch('/bitcoin.json', {
+        const stateName = this.props.name.toLowerCase();
+        fetch('/' + stateName + '.json', {
             header: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
