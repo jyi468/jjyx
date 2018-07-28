@@ -4,7 +4,7 @@
   "description": "A Website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "webpack -d --watch",
     "start": "node ./server/index.js",
     "build": "webpack -p",
@@ -33,5 +33,15 @@
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "webpack-command": "^0.4.1"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.4.2"
+  },
+  "jest": {
+    "testURL": "http://localhost:8080",
+    "setupTestFrameworkScriptFile": "<rootDir>/react-client/tests/testSetup.js"
   }
 }
