@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Row from '../../../../src/Components/Grid/Row/Row';
-describe('Row', () => {
+import Row from './Row';
+describe('Row Component Test', () => {
     it('should render correctly', () => {
         const coinData = {
             "name": 'Bitcoin',
