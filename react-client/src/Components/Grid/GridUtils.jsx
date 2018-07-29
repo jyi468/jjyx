@@ -6,7 +6,7 @@ class GridUtils {
      * @param response
      * @returns {any[]}
      */
-    static createCoins(response) {
+    static createCoins(response={data: {}}) {
         // Change to array first
         let coins = Object.keys(response.data).map(function (key) {
             return response.data[key];

@@ -32,4 +32,8 @@ describe('GridUtils Test', () => {
             ]
         );
     });
+
+    it('should map default object to array', () => {
+        expect(GridUtils.createCoins()).toEqual([]);
+    })
 });
