@@ -58,4 +58,8 @@ class Pagination extends Component {
     }
 }
 
+Pagination.propTypes = {
+    pageNumber: PropTypes.number.isRequired
+}
+
 export default Pagination;
