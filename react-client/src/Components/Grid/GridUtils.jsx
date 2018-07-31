@@ -37,4 +37,5 @@ function compareCoins(coin1, coin2) {
     return 0;
 }
 
-export { GridUtils, compareCoins } ;
+export default GridUtils;
+export { compareCoins } ;

@@ -4,19 +4,23 @@ const initialState = {
     maxPage: 17,
     // rename coins to gridData?
     coins: []
-}
+};
 
 function gridApp(state = initialState, action) {
     return {
-        gridFilter: gridFilter(state.coins, action)
+        grid: gridFilter(state.coins, action)
     };
 }
 
 function gridFilter(state = [], action) {
     switch (action.type) {
-        case REQUEST_GRID: 
+        case REQUEST_GRID:
+            let newCoins = [];
+            for (let i = 0; i < action.numItems; i++) {
+                newCoins.push({rank: i + 1});
+            }
             return Object.assign({}, state, {
-                coins: [];
+                coins: newCoins
             });
         default:
             return state
