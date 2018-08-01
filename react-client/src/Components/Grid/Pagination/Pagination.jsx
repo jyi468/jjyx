@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Pagination extends Component {
     constructor(props) {
@@ -13,23 +14,17 @@ class Pagination extends Component {
 
         let next100 = (
             <li class="page-item">
-                <a class="page-link" href={pageNumber + 1}>Next 100 →</a>
+                <Link to={`/${pageNumber + 1}`} class="page-link">
+                    Next 100 →
+                </Link>
             </li>
         );
 
-        /*let next100 = (
-            <li class="page-item">
-                <a class="page-link">
-                    <Link to={"/" + pageNumber + 1}>
-                        Next 100 →
-                    </Link>
-                </a>
-            </li>
-        );*/
-
         let prev100 = (
             <li class="page-item">
-                <a class="page-link" href={pageNumber - 1}>← Previous 100</a>
+                <Link to={`/${pageNumber - 1}`} class="page-link">
+                    ← Previous 100
+                </Link>
             </li>
         );
 

@@ -27,8 +27,9 @@ class HomePage extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const newPageNumber = this.props.match.params.pageNumber;
-        if (newPageNumber !== prevProps.match.params.pageNumber) {
+        const newPageNumber = parseInt(this.props.match.params.pageNumber);
+        const prevPageNumber = parseInt(prevProps.match.params.pageNumber);
+        if (newPageNumber !== prevPageNumber) {
             this.props.dispatch(fetchGrid(newPageNumber, 100));
         }
     }

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { fetchGrid } from "../../Redux/actions";
 import Grid from './Grid';
 
 const mapStateToProps = state => ({
