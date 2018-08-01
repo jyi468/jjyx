@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Charts from '../Charts/Charts';
+import ChartsContainer from '../Charts/ChartsContainer';
 import NavBar from '../Header/NavBar';
 
 class CurrencyPage extends Component {
