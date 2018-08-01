@@ -25,8 +25,7 @@ export function fetchGrid(pageNumber, numItems) {
 
         dispatch(requestGrid());
 
-        // Change into template string
-        return fetch("https://api.coinmarketcap.com/v2/ticker/?start=" + (100 * (pageNumber - 1) + 1) +"&limit=" + numItems, {
+        return fetch(`https://api.coinmarketcap.com/v2/ticker/?start=${100 * (pageNumber - 1) + 1}&limit=${numItems}`, {
             method: "GET"})
             .then((response) => response.json())
             .then((json) => {
