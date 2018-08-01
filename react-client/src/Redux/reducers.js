@@ -1,26 +1,29 @@
 import { REQUEST_GRID, RECEIVE_GRID } from './actions'
+import { combineReducers } from 'redux';
 
 const initialState = {
-    maxPage: 17,
-    // rename coins to gridData?
-    coins: []
+    coins: [],
+    pageNumber: 1
 };
 
 function gridApp(state = initialState, action) {
+    /*return combineReducers({
+        grid
+    });*/
     return {
-        grid: gridFilter(state.coins, action)
+        grid: grid(state.grid, action)
     };
 }
 
-function gridFilter(state = [], action) {
+function grid(state = initialState, action) {
     switch (action.type) {
         case REQUEST_GRID:
-            let newCoins = [];
-            for (let i = 0; i < action.numItems; i++) {
-                newCoins.push({rank: i + 1});
-            }
             return Object.assign({}, state, {
-                coins: newCoins
+                isFetching: true
+            });
+        case RECEIVE_GRID:
+            return Object.assign({}, state, action.grid, {
+                isFetching: false,
             });
         default:
             return state

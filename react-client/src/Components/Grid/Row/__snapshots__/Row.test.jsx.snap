@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row Component Test should render correctly 1`] = `
+<tr
+  key="1"
+>
+  <th
+    scope="row"
+  >
+    1
+  </th>
+  <td>
+    <Link
+      replace={false}
+      to="/currencies/bitcoin"
+    >
+      Bitcoin
+    </Link>
+  </td>
+  <td>
+    140632734256
+  </td>
+  <td>
+    8190.56
+  </td>
+  <td>
+    5954760000
+  </td>
+  <td>
+    17170100
+  </td>
+  <td>
+    0.04
+  </td>
+</tr>
+`;
+
+exports[`Row should render correctly 1`] = `
+<tr
+  key="1"
+>
+  <th
+    scope="row"
+  >
+    1
+  </th>
+  <td>
+    <Link
+      replace={false}
+      to="/currencies/bitcoin"
+    >
+      Bitcoin
+    </Link>
+  </td>
+  <td>
+    140632734256
+  </td>
+  <td>
+    8190.56
+  </td>
+  <td>
+    5954760000
+  </td>
+  <td>
+    17170100
+  </td>
+  <td>
+    0.04
+  </td>
+</tr>
+`;

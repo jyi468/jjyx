@@ -17,6 +17,16 @@ class Pagination extends Component {
             </li>
         );
 
+        /*let next100 = (
+            <li class="page-item">
+                <a class="page-link">
+                    <Link to={"/" + pageNumber + 1}>
+                        Next 100 →
+                    </Link>
+                </a>
+            </li>
+        );*/
+
         let prev100 = (
             <li class="page-item">
                 <a class="page-link" href={pageNumber - 1}>← Previous 100</a>
