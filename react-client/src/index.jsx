@@ -12,7 +12,7 @@ import "bootstrap";
 import $ from 'jquery';
 import { _ } from 'lodash'
 import App from './Components/App';
-import gridApp from './Redux/reducers';
+import reducerApp from './Redux/reducers';
 
 // export for others scripts to use
 window.$ = $;
@@ -21,7 +21,7 @@ window.jQuery = $;
 /* React Store */
 const loggerMiddleware = createLogger();
 // Create store using root reducer
-const store = createStore(gridApp,
+const store = createStore(reducerApp,
     applyMiddleware(
         thunkMiddleware,
         loggerMiddleware

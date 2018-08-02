@@ -35,7 +35,6 @@ class HomePage extends Component {
     }
 }
 
-// Map state to props that will be passed to presentational component
 const mapStateToProps = state => {
     return {
         grid: state.grid

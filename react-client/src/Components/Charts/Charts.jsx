@@ -1,82 +1,27 @@
 import React, {Component} from 'react';
 import Highcharts from 'highcharts/highstock';
 import Exporting from 'highcharts/modules/exporting';
+import ChartUtils from './ChartUtils';
 
 Exporting(Highcharts);
 
 class Charts extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            data: {}
-        }
-    }
-
-    componentDidMount() {
-        // Can't do below fetch due to CORS not being allowed from coinmarketcap
-        /*fetch('http://anyorigin.com/go?url=https://graphs2.coinmarketcap.com/currencies/' + stateName, {
-            method: 'GET'
-        })*/
-        const stateName = this.props.name.toLowerCase();
-        fetch('/' + stateName + '.json', {
-            header: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then((response) => response.json())
-            .then((currencyJson) => {
-                this.setState({data: currencyJson});
-            });
     }
 
     render() {
-        const currentData = this.state.data;
-        if (Object.keys(currentData).length) {
-            createChart(this.state.data, this.props.name);
+        const currentData = this.props.data;
+        if ($('#container').length && !currentData.isFetching && Object.keys(currentData).length) {
+            let seriesOptions = ChartUtils.createSeriesOptions(this.props.data, this.props.name);
+            createChart(seriesOptions);
         }
         return (<div id="container">{this.props.name}</div>)
     };
 
 }
 
-function createChart(chartData, currencyName) {
-    let seriesOptions = Object.keys(chartData).reduce(function(accumulator, key) {
-        if (currencyName !== 'bitcoin' || (currencyName === 'bitcoin' && name !== 'Price (BTC)')) {
-            let yData = {
-                data: chartData[key]
-            };
-
-            let name;
-
-            switch(key) {
-                case "market_cap_by_available_supply":
-                    name = "Market Cap";
-                    break;
-                case "price_btc":
-                    name = "Price (BTC)";
-                    break;
-                case "price_usd":
-                    name = "Price (USD)";
-                    //yData.yAxis = 1;
-                    break;
-                case "volume_usd":
-                    name = "24h Vol";
-                    break;
-                default:
-                    name = key;
-                    break;
-            }
-
-            yData.name = name;
-
-            accumulator.push(yData);
-        }
-
-        return accumulator;
-
-    }, []);
-
+function createChart(seriesOptions) {
     Highcharts.stockChart('container', {
 
         rangeSelector: {

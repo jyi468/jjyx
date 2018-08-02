@@ -1,5 +1,6 @@
 import GridUtils from "../Components/Grid/GridUtils";
 
+// Home Page
 export const REQUEST_GRID = 'REQUEST_GRID';
 export const RECEIVE_GRID = 'RECEIVE_GRID';
 export const FETCH_GRID = 'FETCH_GRID';
@@ -37,4 +38,40 @@ export function fetchGrid(pageNumber, numItems) {
                 dispatch(receiveGrid(grid))
             });
     }
+}
+
+// Currency Page
+export const REQUEST_CHART = 'REQUEST_CHART';
+export const RECEIVE_CHART = 'RECEIVE_CHART';
+export const FETCH_CHART = 'FETCH_CHART';
+
+export function requestChart() {
+    return {
+        type: 'REQUEST_CHART'
+    }
+}
+
+export function receiveChart(chart) {
+    return {
+        type: 'RECEIVE_CHART',
+        chart,
+        receivedAt: Date.now()
+    }
+}
+
+export function fetchChart(stateName) {
+    return dispatch => {
+        dispatch(requestChart());
+
+        return fetch('/' + stateName + '.json', {
+            header: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                dispatch(receiveChart(json))
+            });
+    };
 }
