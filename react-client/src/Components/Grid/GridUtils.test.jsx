@@ -1,6 +1,4 @@
-import {GridUtils, compareCoins} from "./GridUtils";
-
-"./GridUtils";
+import GridUtils from "./GridUtils";
 
 describe('GridUtils Test', () => {
     it('should map from data and rank coins in the proper order', () => {

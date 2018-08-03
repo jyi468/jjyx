@@ -18,54 +18,19 @@ exports[`Row Component Test should render correctly 1`] = `
     </Link>
   </td>
   <td>
-    140632734256
+    $140,632,734,256
   </td>
   <td>
-    8190.56
+    $8,190.56
   </td>
   <td>
-    5954760000
+    $5,954,760,000
   </td>
   <td>
-    17170100
+    17,170,100 undefined
   </td>
   <td>
-    0.04
-  </td>
-</tr>
-`;
-
-exports[`Row should render correctly 1`] = `
-<tr
-  key="1"
->
-  <th
-    scope="row"
-  >
-    1
-  </th>
-  <td>
-    <Link
-      replace={false}
-      to="/currencies/bitcoin"
-    >
-      Bitcoin
-    </Link>
-  </td>
-  <td>
-    140632734256
-  </td>
-  <td>
-    8190.56
-  </td>
-  <td>
-    5954760000
-  </td>
-  <td>
-    17170100
-  </td>
-  <td>
-    0.04
+    0.04%
   </td>
 </tr>
 `;
