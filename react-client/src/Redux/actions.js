@@ -63,7 +63,7 @@ export function fetchChart(stateName) {
     return dispatch => {
         dispatch(requestChart());
 
-        return fetch('/' + stateName + '.json', {
+        return fetch(`/${stateName}.json`, {
             header: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
