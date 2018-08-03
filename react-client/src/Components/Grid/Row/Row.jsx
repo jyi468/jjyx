@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { Route, Redirect, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import RowUtils from './RowUtils';
 
-function Row(props) {
-    let data = props.data;
+const Row = ({data}) => {
     let linkUrl = '/currencies/' + data.name.toLowerCase();
     return (
         <tr key={data.rank}>
@@ -18,6 +17,6 @@ function Row(props) {
             <td>{data.quotes.USD.percent_change_24h + '%'}</td>
         </tr>
     );
-}
+};
 
 export default Row;
