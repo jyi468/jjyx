@@ -1,6 +1,6 @@
 class ChartUtils {
     static createSeriesOptions(json, currencyName) {
-        return Object.keys(json).reduce(function (accumulator, key) {
+        return Object.keys(json).reduce((accumulator, key) => {
             if (currencyName !== 'bitcoin' || (currencyName === 'bitcoin' && name !== 'Price (BTC)')) {
                 let yData = {
                     data: json[key]
