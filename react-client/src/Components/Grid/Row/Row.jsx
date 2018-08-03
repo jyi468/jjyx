@@ -6,7 +6,7 @@ const Row = ({data}) => (
     <tr key={data.rank}>
         <th scope="row">{data.rank}</th>
         <td>
-            <Link to={`/currencies/${data.name.toLowerCase()}`}>{data.name}</Link>
+            <Link to={`/currencies/${data.name}`}>{data.name}</Link>
         </td>
         <td>{RowUtils.numToUsd(data.quotes.USD.market_cap)}</td>
         <td>{RowUtils.numToUsd(data.quotes.USD.price)}</td>
