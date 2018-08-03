@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Row from './Row/Row';
 import Pagination from './Pagination/Pagination';
 
