@@ -7,3 +7,9 @@
         padding-right: 248px
     }
 }
+
+.primary-lighter-hover {
+    color: #4285F4;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
