@@ -13,3 +13,17 @@
     -webkit-transition: .4s;
     transition: .4s;
 }
+
+.navbar-background-color {
+    background: #4D87EC;
+}
+
+.cmc-logo-full {
+    background-image: url(images/cmc_logo_full.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 263px;
+    height: 45px;
+}
