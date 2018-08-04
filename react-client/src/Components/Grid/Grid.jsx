@@ -4,10 +4,14 @@ import Pagination from './Pagination/Pagination';
 
 const Grid = ({pageNumber, maxPage, data}) => (
     <div>
-        <div class="page-header mt-5 mb-5">
-            <h1>Top 100 Cryptocurrencies By Market Capitalization</h1>
-        </div>
-
+        { pageNumber > 1 ?
+            <div className="page-header mt-5 mb-5">
+                <h1>Top 100 Cryptocurrencies By Market Capitalization (page {pageNumber})</h1>
+            </div> :
+            <div className="page-header mt-5 mb-5">
+                <h1>Top 100 Cryptocurrencies By Market Capitalization</h1>
+            </div>
+        }
         <div className="row">
             <div className="col-xs-4 offset-md-8">
                 <Pagination pageNumber={pageNumber} maxPage={maxPage}/>

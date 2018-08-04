@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-const Pagination = ({pageNumber}) => {
+const Pagination = ({pageNumber, maxPage}) => {
     let next100 = (
         <li class="page-item">
             <Link to={`/${pageNumber + 1}`} class="page-link">
@@ -34,7 +34,7 @@ const Pagination = ({pageNumber}) => {
                 {viewAll}
             </ul>
         );
-    } else if (pageNumber === this.props.maxPage) {
+    } else if (pageNumber === maxPage) {
         // If page number n, show Previous 100
         return (
             <ul class="pagination">
