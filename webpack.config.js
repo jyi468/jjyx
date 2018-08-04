@@ -41,7 +41,8 @@ module.exports = {
                 loader: 'url-loader',
                 query: {
                     limit: '10000',
-                    mimetype: 'application/octet-stream'
+                    mimetype: 'application/octet-stream',
+                    name: 'fonts/[name].[ext]'
                 }
             },
             {
@@ -49,19 +50,24 @@ module.exports = {
                 loader: 'url-loader',
                 query: {
                     limit: 10000,
-                    mimetype: 'application/font-woff'
+                    mimetype: 'application/font-woff',
+                    name: 'fonts/[name].[ext]'
                 }
             },
             {
                 test: /\.eot(\?.*$|$)/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                query: {
+                    name: 'fonts/[name].[ext]'
+                }
             },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'svg-url-loader',
                 query: {
                     limit: '10000',
-                    mimetype: 'application/svg+xml'
+                    mimetype: 'application/svg+xml',
+                    name: 'fonts/[name].[ext]'
                 }
             }
         ]
