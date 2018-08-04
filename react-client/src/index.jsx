@@ -1,16 +1,21 @@
-// Entry point of application where we point to all jsx files
-// jsx files are syntactic sugar for React.createElement(component, props, ...children). You can return
+// React / Redux
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-//import Button from '@material-ui/core/Button';
 
-import "bootstrap";
+// Material Design Bootstrap
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
+// Global
 import $ from 'jquery';
 import { _ } from 'lodash'
+
+// App Specific
 import App from './Components/App';
 import reducerApp from './Redux/reducers';
 

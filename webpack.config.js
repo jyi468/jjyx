@@ -14,8 +14,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css']
     },
-    module : {
-        rules : [
+    module: {
+        rules: [
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
@@ -29,11 +29,39 @@ module.exports = {
                 loader: 'file-loader'
             },
             {
-                test : /\.jsx?/,
-                include : SRC_DIR,
-                loader : 'babel-loader',
+                test: /\.(js|jsx)?/,
+                include: SRC_DIR,
+                loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015']
+                }
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: '10000',
+                    mimetype: 'application/octet-stream'
+                }
+            },
+            {
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 10000,
+                    mimetype: 'application/font-woff'
+                }
+            },
+            {
+                test: /\.eot(\?.*$|$)/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'svg-url-loader',
+                query: {
+                    limit: '10000',
+                    mimetype: 'application/svg+xml'
                 }
             }
         ]
@@ -43,4 +71,5 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('production')
         })
     ]
-};
+}
+;
