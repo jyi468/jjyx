@@ -11,6 +11,9 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
+// Custom Styles
+import css from './styling/styles.css';
+
 // Global
 import $ from 'jquery';
 import { _ } from 'lodash'
