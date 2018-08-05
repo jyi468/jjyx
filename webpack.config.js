@@ -21,14 +21,9 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             },
             {
-                test: /\.png$/,
-                loader: 'url-loader?limit=100000&minetype=image/png'
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: "file-loader?name=/react-client/resources/images/[name].[ext]"
             },
-            {
-                test: /\.jpg/,
-                loader: 'file-loader'
-            },
-
             {
                 test: /\.(js|jsx)?/,
                 include: SRC_DIR,
