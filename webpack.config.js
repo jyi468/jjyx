@@ -29,6 +29,7 @@ module.exports = {
             {
                 // TODO: get json resources
                 test: /\.json$/,
+                include: path.join(SRC_DIR, '/resources'),
                 loader: 'file-loader?name=/resources/[name].[ext]',
             },
             {

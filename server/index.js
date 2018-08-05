@@ -1,5 +1,5 @@
 // Try to replace this with phoenix instead of using expressjs node.js framework for server
-
+// TODO: Fix refresh on currency page
 const express = require('express');
 const bodyParser = require('body-parser');
 // Have to use process.env.PORT so that Heroku can set it here

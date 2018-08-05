@@ -13,6 +13,7 @@ import 'mdbreact/dist/css/mdb.css';
 
 // Custom Styles
 import css from './styling/styles.css';
+import img from './resources/images/cmc_logo_full.png';
 
 // Global
 import $ from 'jquery';
