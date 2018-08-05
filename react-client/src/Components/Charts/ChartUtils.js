@@ -72,13 +72,22 @@ class ChartUtils {
             plotOptions: {
                 series: {
                     compare: 'percent',
-                    showInNavigator: true
+                    showInNavigator: true,
+                    enableMouseTracking: true,
+                    followPointer: true,
+                    stickyTracking: true
+                },
+                line: {
+                    enableMouseTracking: true,
+                    followPointer: true,
+                    stickyTracking: true
                 }
             },
 
             tooltip: {
                 pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
                 valueDecimals: 2,
+                shared: false,
                 split: true
             },
 

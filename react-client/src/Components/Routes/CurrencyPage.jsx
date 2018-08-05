@@ -25,10 +25,8 @@ class CurrencyPage extends Component {
         return (
             <div class="container main-section">
                 <NavBar />
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>{this.props.match.params.name}</h1>
-                    </div>
+                <div class="page-header mt-5 mb-5">
+                    <h1>{this.props.match.params.name}</h1>
                 </div>
                 <ChartsContainer name={this.props.match.params.name}/>
             </div>

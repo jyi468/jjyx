@@ -16,14 +16,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve('${__dirname}/../react-client/dist/index.html'));
 });
 
-/*app.get('/:pageNumber?', (req, res) => {
-    res.sendFile(path.resolve('${__dirname}/../react-client/dist/index.html'));
-});
-
-app.get('/currencies/:coinName?', (req, res) => {
-    res.sendFile(path.resolve('${__dirname}/../react-client/dist/index.html'));
-});*/
-
 // Get bitcoin json
 app.get('/bitcoin.json', (req, res) => {
     res.json(path.resolve('${__dirname}/../react-client/resources/bitcoin.json'));

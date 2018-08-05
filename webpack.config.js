@@ -4,11 +4,11 @@ const path = require('path');
 const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: `${SRC_DIR}/index.jsx`,
     output: {
         path: DIST_DIR,
-        publicPath: "/dist/",
         filename: 'bundle.js',
     },
     resolve: {
@@ -28,10 +28,12 @@ module.exports = {
                 test: /\.jpg/,
                 loader: 'file-loader'
             },
+
             {
                 test: /\.(js|jsx)?/,
                 include: SRC_DIR,
                 loader: 'babel-loader',
+                exclude: [path.join(SRC_DIR, '/index.html')],
                 query: {
                     presets: ['react', 'es2015']
                 }
@@ -73,8 +75,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'react-client/src/index.html'
         })
     ]
 }
