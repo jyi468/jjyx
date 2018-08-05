@@ -3,8 +3,7 @@ logs
 *.Logs
 
 # build and bundle
-build/
-bundle.js
+dist/
 
 # dependency
 node_modules/

@@ -22,7 +22,11 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loader: "file-loader?name=/react-client/resources/images/[name].[ext]"
+                loader: "file-loader?name=/resources/images/[name].[ext]"
+            },
+            {
+                test: /\.json$/,
+                loader: 'file-loader?name=/resources/[name].[ext]',
             },
             {
                 test: /\.(js|jsx)?/,
