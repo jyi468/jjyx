@@ -11,6 +11,7 @@ module.exports = {
         // TODO: Make separate dev-dist and dist for dev and production
         path: DIST_DIR,
         filename: 'bundle.js',
+        publicPath: "/"
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css']
