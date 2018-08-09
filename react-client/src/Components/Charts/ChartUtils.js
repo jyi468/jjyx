@@ -69,6 +69,11 @@ class ChartUtils {
                 }]
             }],
 
+            xAxis: {
+                // Default range of navigator is 1 year
+                range: 31556952000
+            },
+
             plotOptions: {
                 series: {
                     compare: 'percent',

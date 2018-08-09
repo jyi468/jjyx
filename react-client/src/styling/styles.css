@@ -19,7 +19,7 @@
 }
 
 .cmc-logo-full {
-    background-image: url(../resources/images/cmc_logo_full.png);
+    background-image: url(~/resources/images/cmc_logo_full.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
