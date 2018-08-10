@@ -28,6 +28,7 @@
     "highcharts": "^6.1.1",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
+    "mdbreact": "^4.6.1",
     "nodemon": "^1.18.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
