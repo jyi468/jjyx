@@ -6,7 +6,7 @@ const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: `${SRC_DIR}/index.jsx`,
+    entry: `${SRC_DIR}/index.tsx`,
     output: {
         // TODO: Make separate dev-dist and dist for dev and production
         path: DIST_DIR,
@@ -84,6 +84,7 @@ module.exports = {
         ]
     },
     plugins: [
+        // Auto generate script tag containing bundle in index.html
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'react-client/src/index.html'

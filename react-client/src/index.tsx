@@ -16,7 +16,7 @@ import css from './styling/styles.css';
 import img from './resources/images/cmc_logo_full.png';
 
 // Global
-import $ from 'jquery';
+import * as $ from 'jquery';
 import { _ } from 'lodash'
 
 // App Specific
